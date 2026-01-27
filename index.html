@@ -1,156 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>A&J Security Services | BASE Portal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background: #f5f7fb;
-      color: #1f2937;
-    }
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: #cbd5e1;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: white;
-    }
-    .hero {
-      padding: 80px 40px;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    .hero p {
-      max-width: 600px;
-      margin: 16px auto;
-      color: #cbd5e1;
-    }
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      margin: 10px;
-      border-radius: 6px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .btn.secondary {
-      background: #334155;
-    }
-    section {
-      padding: 60px 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    }
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-    }
-  </style>
+<head>
+    <meta charset="UTF-8">
+    <title>BASE Portal | Subcontractor Access</title>
 </head>
 
 <body>
+    <h1>BASE Portal</h1>
+    <p>Welcome, subcontractor. You are logged in.</p>
 
-<header>
-  <strong>A&J Security Services</strong>
-  <nav>
-    <a href="#">Forms</a>
-    <a href="#">Growth</a>
-    <a href="#">Resources</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+    <button onclick="netlifyIdentity.logout()">Logout</button>
 
-<section class="hero">
-  <h1>Welcome to BASE</h1>
-  <p>
-    Building All Staff Engagement — your centralized portal for employment forms,
-    operational tools, training resources, and company updates.
-  </p>
-  <a href="#" class="btn">View Resources</a>
-  <a href="#" class="btn secondary">Access Forms</a>
-</section>
-
-<section>
-  <h2>About A&J Security Services</h2>
-  <p>
-    Founded by experienced security professionals, A&J Security Services delivers
-    reliable protection solutions across commercial, residential, and government
-    environments.
-  </p>
-</section>
-
-<section>
-  <h2>Our Mission & Vision</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Mission</h3>
-      <p>
-        Deliver professional, top-tier security services that provide peace of mind
-        through vigilance, integrity, and accountability.
-      </p>
-    </div>
-    <div class="card">
-      <h3>Vision</h3>
-      <p>
-        Set the standard for excellence in the security industry through innovation,
-        professionalism, and trusted service.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Our Culture — EPIC TV</h2>
-  <div class="grid">
-    <div class="card">Excellence</div>
-    <div class="card">Passion</div>
-    <div class="card">Integrity</div>
-    <div class="card">Customer Service</div>
-    <div class="card">Teamwork</div>
-    <div class="card">Vigilance</div>
-  </div>
-</section>
-
-<footer>
-  © 2026 A&J Security Services — BASE Portal
-</footer>
-
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        netlifyIdentity.on("logout", () => {
+            window.location.href = "/";
+        });
+    </script>
 </body>
+
 </html>
