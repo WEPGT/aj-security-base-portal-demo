@@ -1,29 +1,138 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<script>
-    if (!window.netlifyIdentity) {
-        window.location.href = "/login.html";
-    }
-</script>
-
 <head>
-    <meta charset="UTF-8">
-    <title>BASE Portal | Subcontractor Access</title>
+  <meta charset="UTF-8" />
+  <title>A&J Security Services | BASE Portal (Demo)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1f2937;
+    }
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+    p {
+      max-width: 700px;
+      line-height: 1.6;
+      color: #374151;
+    }
+    .cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background: #1f2937;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn.secondary {
+      background: #475569;
+    }
+    section {
+      margin-top: 80px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 32px;
+      margin-top: 100px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
-<p><a href="/">← Back to public site</a></p>
 
 <body>
-    <h1>BASE Portal</h1>
-    <p>Welcome, subcontractor. You are logged in.</p>
 
-    <button onclick="netlifyIdentity.logout()">Logout</button>
+<header>
+  <strong>A&J Security Services</strong>
+  <span>BASE Portal — Demo</span>
+</header>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script>
-        netlifyIdentity.on("logout", () => {
-            window.location.href = "/";
-        });
-    </script>
+<main>
+  <h1>Welcome to BASE</h1>
+  <p>
+    BASE (Building All Staff Engagement) is A&J Security Services’ centralized
+    portal concept for subcontractors and staff. This demo shows a modern,
+    simplified interface that improves access to forms, resources, and company
+    information.
+  </p>
+
+  <div class="cta">
+    <a href="#" class="btn">View Resources</a>
+    <a href="#" class="btn secondary">Access Forms</a>
+  </div>
+
+  <section>
+    <h2>What This Portal Provides</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Forms & Documentation</h3>
+        <p>Employment forms, uniform requests, and standardized templates in one place.</p>
+      </div>
+      <div class="card">
+        <h3>Growth Opportunities</h3>
+        <p>Clear guidance on advancement paths such as FTO, CPL, SGT, and LT roles.</p>
+      </div>
+      <div class="card">
+        <h3>Operational Resources</h3>
+        <p>Post orders, emergency response guides, professional standards, and training materials.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Why This Matters</h2>
+    <p>
+      This redesigned portal concept reduces confusion, improves communication,
+      and creates a professional experience for subcontractors while remaining
+      easy to maintain and scale.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 A&J Security Services — BASE Portal Demo
+</footer>
+
 </body>
-
 </html>
