@@ -157,40 +157,39 @@
 <footer>
   © 2026 A&J Security Services — BASE Portal Demo
 </footer>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+
 <script>
   let auth0Client = null;
 
-  async function initAuth() {
+  window.initAuth = async function () {
     auth0Client = await createAuth0Client({
-      domain: dev-6wjj1eidnph54te8.us.auth0.com,
-      clientId: LlcVZoBLJOeOWuuJ5Qv267vMRKtsWBqe,
+      domain: "YOUR_AUTH0_DOMAIN",
+      clientId: "YOUR_AUTH0_CLIENT_ID",
       authorizationParams: {
         redirect_uri: window.location.origin
       }
     });
+  };
 
-    const isAuthenticated = await auth0Client.isAuthenticated();
-
-    if (isAuthenticated) {
-      document.getElementById("loginBtn").style.display = "none";
-    }
-  }
-
-  async function login() {
+  window.login = async function () {
+    console.log("login() called");
     await auth0Client.loginWithRedirect();
-  }
+  };
 
-  async function logout() {
+  window.logout = async function () {
     await auth0Client.logout({
       logoutParams: {
         returnTo: window.location.origin
       }
     });
-  }
+  };
 
-  window.onload = initAuth;
+  window.addEventListener("load", initAuth);
 </script>
+
 
 </body>
 </html>
+
 
