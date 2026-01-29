@@ -164,15 +164,24 @@
 <script>
   let auth0Client = null;
 
+  // Initialize Auth0
   window.initAuth = async function () {
-    auth0Client = await createAuth0Client({
-      domain: "dev-6wjj1eidnph54te8.us.auth0.com",
-      clientId: "LlcVZoBLJOeOWuuJ5Qv267vMRKtsWBqe",
-      authorizationParams: {
-        redirect_uri: window.location.origin
-      }
-    });
+    try {
+      auth0Client = await createAuth0Client({
+        domain: "dev-6wjj1eidnph54te8.us.auth0.com",
+        clientId: "LlcVZoBLJOeOWuuJ5Qv267vMRKtsWBqe",
+        authorizationParams: {
+          redirect_uri: window.location.origin
+        }
+      });
 
+      console.log("Auth0 initialized");
+    } catch (e) {
+      console.error("Auth0 init failed:", e);
+    }
+  };
+
+  // Login handler (GLOBAL, always available)
   window.login = async function () {
     if (!auth0Client) {
       console.warn("Auth0 not ready yet");
@@ -181,13 +190,13 @@
     await auth0Client.loginWithRedirect();
   };
 
-
-  });
-
+  // Start Auth0 on page load
   window.addEventListener("load", initAuth);
 </script>
 
+
 </body>
 </html>
+
 
 
