@@ -173,11 +173,6 @@
       }
     });
 
-    const loginBtn = document.getElementById("loginBtn");
-    loginBtn.style.pointerEvents = "auto";
-    loginBtn.style.opacity = "1";
-  };
-
   window.login = async function () {
     if (!auth0Client) {
       console.warn("Auth0 not ready yet");
@@ -186,11 +181,7 @@
     await auth0Client.loginWithRedirect();
   };
 
-  // Disable login until Auth0 initializes
-  document.addEventListener("DOMContentLoaded", () => {
-    const loginBtn = document.getElementById("loginBtn");
-    loginBtn.style.pointerEvents = "none";
-    loginBtn.style.opacity = "0.6";
+
   });
 
   window.addEventListener("load", initAuth);
@@ -198,4 +189,5 @@
 
 </body>
 </html>
+
 
