@@ -92,4 +92,108 @@
   </style>
 
   <!-- Auth0 SDK -->
-  <script src="https://cdn.auth0.com/js/auth0-spa-js
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+</head>
+
+<body>
+
+<header>
+  <strong>A&J Security Services</strong>
+  <nav>
+    <a id="loginBtn" class="btn secondary" onclick="login()">Subcontractor Login</a>
+  </nav>
+</header>
+
+<main>
+  <h1>BASE Portal for A&amp;J Security Services</h1>
+
+  <p>
+    BASE (Building All Staff Engagement) is A&J Security Services’ centralized
+    portal concept for subcontractors and staff. This demo shows a modern,
+    simplified interface that improves access to forms, resources, and company
+    information.
+  </p>
+
+  <div class="cta">
+    <a class="btn">View Resources</a>
+    <a class="btn secondary">Access Forms</a>
+  </div>
+
+  <section>
+    <h2>What This Portal Provides</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Forms & Documentation</h3>
+        <p>Employment forms, uniform requests, and standardized templates in one place.</p>
+      </div>
+      <div class="card">
+        <h3>Growth Opportunities</h3>
+        <p>Clear guidance on advancement paths such as FTO, CPL, SGT, and LT roles.</p>
+      </div>
+      <div class="card">
+        <h3>Operational Resources</h3>
+        <p>Post orders, emergency response guides, professional standards, and training materials.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Secure Access (Planned)</h2>
+    <p>
+      In production, access to BASE would be secured using enterprise-grade
+      authentication to ensure only authorized subcontractors and supervisors
+      can access internal systems.
+    </p>
+  </section>
+
+  <section>
+    <h2>Demo Notes</h2>
+    <p>
+      This demo focuses on layout, usability, and structure. Authentication and
+      role-based access will be enabled during production rollout.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 A&amp;J Security Services — BASE Portal Demo
+</footer>
+
+<!-- Auth0 Logic -->
+<script>
+  let auth0Client = null;
+
+  window.initAuth = async function () {
+    auth0Client = await createAuth0Client({
+      domain: "dev-6wjj1eidnph54te8.us.auth0.com",
+      clientId: "LlcVZoBLJOeOWuuJ5Qv267vMRKtsWBqe",
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    });
+
+    const loginBtn = document.getElementById("loginBtn");
+    loginBtn.style.pointerEvents = "auto";
+    loginBtn.style.opacity = "1";
+  };
+
+  window.login = async function () {
+    if (!auth0Client) {
+      console.warn("Auth0 not ready yet");
+      return;
+    }
+    await auth0Client.loginWithRedirect();
+  };
+
+  // Disable login until Auth0 initializes
+  document.addEventListener("DOMContentLoaded", () => {
+    const loginBtn = document.getElementById("loginBtn");
+    loginBtn.style.pointerEvents = "none";
+    loginBtn.style.opacity = "0.6";
+  });
+
+  window.addEventListener("load", initAuth);
+</script>
+
+</body>
+</html>
