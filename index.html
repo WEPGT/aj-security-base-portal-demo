@@ -164,7 +164,6 @@
 <script>
   let auth0Client = null;
 
-  // Initialize Auth0
   window.initAuth = async function () {
     try {
       auth0Client = await createAuth0Client({
@@ -177,11 +176,10 @@
 
       console.log("Auth0 initialized");
     } catch (e) {
-      console.error("Auth0 init failed:", e);
+      console.error("Auth0 init failed", e);
     }
   };
 
-  // Login handler (GLOBAL, always available)
   window.login = async function () {
     if (!auth0Client) {
       console.warn("Auth0 not ready yet");
@@ -190,13 +188,13 @@
     await auth0Client.loginWithRedirect();
   };
 
-  // Start Auth0 on page load
   window.addEventListener("load", initAuth);
 </script>
 
 
 </body>
 </html>
+
 
 
 
