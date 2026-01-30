@@ -57,14 +57,35 @@
     }
 
     .badge {
-      display: inline-block;
-      background: #e5e7eb;
-      color: #111827;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      margin-bottom: 10px;
-    }
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Badge types */
+.badge.required {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge.operational {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.badge.career {
+  background: #ecfeff;
+  color: #155e75;
+}
+
+.badge.new {
+  background: #dcfce7;
+  color: #166534;
+}
+
 
     .btn {
       display: inline-block;
@@ -110,7 +131,7 @@
 
   <div class="grid">
   <div class="card">
-    <span class="badge">Required</span><br />
+    <span class="badge required">Required</span><br />
     <span class="icon">📄</span>
     <h3>Documents & Forms</h3>
     <p>Employment paperwork, uniform requests, and required documentation.</p>
@@ -118,7 +139,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">Operational</span><br />
+    <span class="badge operational">Operational</span><br />
     <span class="icon">🛡️</span>
     <h3>Post Orders</h3>
     <p>Site instructions, emergency procedures, and daily operational guidance.</p>
@@ -126,7 +147,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">Career</span><br />
+    <span class="badge career">Career</span><br />
     <span class="icon">🎓</span>
     <h3>Training & Growth</h3>
     <p>Career paths, certifications, and advancement opportunities.</p>
@@ -134,7 +155,7 @@
   </div>
 
   <div class="card">
-    <span class="badge">New</span><br />
+    <span class="badge new">New</span><br />
     <span class="icon">📢</span>
     <h3>Announcements</h3>
     <p>Company updates, alerts, and important notices.</p>
