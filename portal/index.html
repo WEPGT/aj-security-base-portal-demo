@@ -76,49 +76,68 @@
       text-decoration: none;
       font-weight: 600;
     }
+.card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  margin-top: 6px;
+}
+
+    
   </style>
 </head>
 
 <body>
 
 <header>
-  <strong>A&J Security Services</strong>
-<a href="../">← Back to Home</a>
-
+  <div>
+    <strong>A&J Security Services</strong><br />
+    <span style="font-size:0.85rem; color:#94a3b8;">BASE Portal</span>
+  </div>
+  <a class="btn" href="https://wepgt.github.io/aj-security-base-portal-demo/">Exit Demo</a>
 </header>
+
 
 <main>
   <h1>BASE Portal</h1>
   <div class="sub">Subcontractor Dashboard • Demo</div>
 
   <div class="grid">
-    <div class="card">
-      <span class="badge">Forms</span>
-      <h3>Documents & Forms</h3>
-      <p>Employment paperwork, uniform requests, and required documentation.</p>
-      <a class="btn" href="#">Open</a>
-    </div>
+  <div class="card">
+    <span class="badge">Required</span>
+    <h3>Documents & Forms</h3>
+    <p>Employment paperwork, uniform requests, and required documentation.</p>
+    <a class="btn" href="#">Open</a>
+  </div>
 
-    <div class="card">
-      <span class="badge">Operations</span>
-      <h3>Post Orders</h3>
-      <p>Site instructions, emergency procedures, and daily operational guidance.</p>
-      <a class="btn" href="#">View</a>
-    </div>
+  <div class="card">
+    <span class="badge">Operational</span>
+    <h3>Post Orders</h3>
+    <p>Site instructions, emergency procedures, and daily operational guidance.</p>
+    <a class="btn" href="#">View</a>
+  </div>
 
-    <div class="card">
-      <span class="badge">Training</span>
-      <h3>Training & Growth</h3>
-      <p>Career paths, certifications, and advancement opportunities.</p>
-      <a class="btn" href="#">Explore</a>
-    </div>
+  <div class="card">
+    <span class="badge">Career</span>
+    <h3>Training & Growth</h3>
+    <p>Career paths, certifications, and advancement opportunities.</p>
+    <a class="btn" href="#">Explore</a>
+  </div>
 
-    <div class="card">
-      <span class="badge">Comms</span>
-      <h3>Announcements</h3>
-      <p>Company updates, alerts, and important notices.</p>
-      <a class="btn" href="#">Read</a>
-    </div>
+  <div class="card">
+    <span class="badge">New</span>
+    <h3>Announcements</h3>
+    <p>Company updates, alerts, and important notices.</p>
+    <a class="btn" href="#">Read</a>
+  </div>
+</div>
+
   </div>
 </main>
 
