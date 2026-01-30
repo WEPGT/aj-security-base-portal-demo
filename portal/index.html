@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BASE Portal | A&J Security Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #f4f6f9;
+      color: #1f2937;
+    }
+
+    header {
+      background: #0f172a;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 6px;
+    }
+
+    .sub {
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e5e7eb;
+      color: #111827;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: #1f2937;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <strong>A&J Security Services</strong>
+  <a href="/">← Back to Home</a>
+</header>
+
+<main>
+  <h1>BASE Portal</h1>
+  <div class="sub">Subcontractor Dashboard • Demo</div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="badge">Forms</span>
+      <h3>Documents & Forms</h3>
+      <p>Employment paperwork, uniform requests, and required documentation.</p>
+      <a class="btn" href="#">Open</a>
+    </div>
+
+    <div class="card">
+      <span class="badge">Operations</span>
+      <h3>Post Orders</h3>
+      <p>Site instructions, emergency procedures, and daily operational guidance.</p>
+      <a class="btn" href="#">View</a>
+    </div>
+
+    <div class="card">
+      <span class="badge">Training</span>
+      <h3>Training & Growth</h3>
+      <p>Career paths, certifications, and advancement opportunities.</p>
+      <a class="btn" href="#">Explore</a>
+    </div>
+
+    <div class="card">
+      <span class="badge">Comms</span>
+      <h3>Announcements</h3>
+      <p>Company updates, alerts, and important notices.</p>
+      <a class="btn" href="#">Read</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
